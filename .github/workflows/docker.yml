@@ -27,9 +27,6 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: cmake path
-        run: type -a cmake
-
       - name: actions 8260
         run: /opt/am8268/CodeSourcery/Sourcery_G++_Lite/bin/mips-linux-gnu-gcc -v
         
