@@ -27,6 +27,16 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      - name: environments
+        working-directory: ${{github.workspace}}
+        env:
+          my_runner_workspace: ${{ runner.workspace }}
+          my_github_workspace: ${{ github.workspace }}
+        run: |
+          echo GITHUB_WORKSPACE $GITHUB_WORKSPACE
+          echo my_runner_workspace $my_runner_workspace
+          echo my_github_workspace $my_github_workspace
+
       - name: actions 8260
         run: /opt/am8268/CodeSourcery/Sourcery_G++_Lite/bin/mips-linux-gnu-gcc -v
         
